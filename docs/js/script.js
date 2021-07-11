@@ -1,8 +1,5 @@
-
-"use strict"
-
-window.onload = function () {
-  function testWebP(callback) {
+$(document).ready(function() {
+  {function testWebP(callback) {
   var webP = new Image();
   webP.onload = webP.onerror = function () {
     callback(webP.height == 2);
@@ -16,8 +13,8 @@ testWebP(function (support) {
   } else {
     document.querySelector('body').classList.add('no-webp');
   }
-});
-  
+});}
+  {
 
 document.addEventListener("click", documentActions);
 let detect = new MobileDetect(window.navigator.userAgent)
@@ -34,8 +31,8 @@ function documentActions(e) {
   } else if(!targetElement.closest('.search-form') && document.querySelector('._active')) {
     document.querySelector('.search-form').classList.remove('_active')
   }
-}
-  
+}}
+  {
 const spollersArray = document.querySelectorAll('[data-spollers]');
 if (spollersArray.length > 0) {
   const spollersRegular = Array.from(spollersArray).filter(function (item) {
@@ -111,7 +108,7 @@ if (spollersArray.length > 0) {
   
   function initSpollerBody(spollersBlock, hideSpollersBody = true) {
     const spollerTitles = spollersBlock.querySelectorAll('[data-spoller]');
-    if (spollerTitles.lenght > 0) {
+    if (spollerTitles.length > 0) {
       spollerTitles.forEach(spollerTitles => {
         if (hideSpollersBody) {
           spollerTitles.removeAttribute('tabindex');
@@ -132,7 +129,7 @@ if (spollersArray.length > 0) {
       const spollerTitles = el.hasAttribute('data-spoller') ? el : el.closest('data-spoller');
       const spollersBlock = spollerTitles.closest('[data-spollers]');
       const oneSpoller = spollersBlock.hasAttribute('data-one-spoller') ? true : false;
-      if (!spollersBlock.querySelectorAll('._slide').lenght){
+      if (!spollersBlock.querySelectorAll('._slide').length){
         if (oneSpoller && !spollerTitles.classList.contains('_active')) {
           hideSpollersBody(spollersBlock);
         }
@@ -161,7 +158,7 @@ let _slideUp = (target, duration = 500) => {
   if (!target.classList.contains('_slide')) {
     target.classList.add('_slide');
     target.style.transitionProperty = 'height, margin, padding';
-    target.style.transitionDuration = duration - 100 + 'ms';
+    target.style.transitionDuration = duration + 'ms';
     target.style.height = target.offsetHeight + 'px';
     target.offsetHeight;
     target.style.overflow = 'hidden';
@@ -199,8 +196,8 @@ let _slideDown = (target, duration = 500) => {
     target.style.marginBottom = 0;
     target.offsetHeight;
     target.style.transitionProperty = 'height, margin, padding';
-    target.style.transitionDuration = duration - 100 + 'ms';
-    target.style.height = target.offsetHeight + 'px';
+    target.style.transitionDuration = duration + 'ms';
+    target.style.height = height + 'px';
     target.style.removeProperty('padding-top');
     target.style.removeProperty('padding-bottom');
     target.style.removeProperty('margin-top');
@@ -220,5 +217,9 @@ let _slideToggle = (target, duration = 500) => {
   } else {
     return _slideUp(target, duration);
   }
-}
-}
+}}
+  {$('.icon-menu').click(function(event) {
+  $('.icon-menu,.menu__body').toggleClass('_active');
+  // $('body').toggleClass('lock')
+});}
+});
